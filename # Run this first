@@ -1,0 +1,80 @@
+# Run this first
+-> sudo apt update
+
+# Install git
+	-> sudo apt install git
+
+## Installing RVM (Ruby Version Manager)
+	1. Check if RVM is present
+	-> rvm --version
+# IF YES:
+	a. Upgrade to latest stable RVM
+	-> rvm get stable
+	-> rvm reload
+# IF NO:
+	a. Install from instructions on below link
+	-> https://rvm.io/rvm/install
+Troubleshoting RVM
+	-> rvmsudo rvm cleanup all
+	*above command help to fix source installation error
+
+# Installing RUBY 
+	-> rvm list known
+	-> rvm install 2.4
+	-> rvm use 2.4 --default
+	-> ruby -v
+
+# Installing RAILS
+	-> gem install rails -v 5.2.1
+	-> rails --version
+Troubleshoting Rails
+	-> gem install sprockets -v 3.7.2
+	-> gem install nokogiri -v 1.10.10
+
+## Finally checking all installations
+# Run
+	-> rvm --version
+# output
+	-> rvm 1.29.12 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]	
+# Run
+	-> ruby --version
+# output
+	-> ruby 2.4.10p364 (2020-03-31 revision 67879) [x86_64-linux]
+# Run
+	-> rails --version
+# output
+	-> Rails 5.2.1
+
+## Installing PostgreSQL
+	-> sudo apt update
+	-> sudo apt install postgresql postgresql-contrib
+
+# On Success. You can now start the database server
+	-> pg_ctlcluster 12 main start
+# Troubleshoot PostgreSQL running
+	-> sudo systemctl start postgresql@12-main
+# Website here
+	-> https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
+# Check if postgres is running
+	-> pgrep -u postgres -fa -- -D
+	-> pgrep -fa -- -D | grep postgres
+
+# Create Project
+
+-> rails new instagram --version=5.2.1
+-> cd instagram
+-> bundle install
+-> bundle update
+Troubleshot bundle install
+-> bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java
+
+# Run rails server
+-> rails server
+# Troubleshoting rails server
+-> rails -s
+# Add this to gem file
+gem 'therubyracer'
+# In Terminal run
+-> bundle install
+# Run rails server again
+-> rails server
