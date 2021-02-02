@@ -22,12 +22,14 @@
             <section class="post">
                 <div class="user">
                     <div class="avatar">
-                    <img src="user_avatar.jpg">
+                        <% if post.user.avatar.attached? %>
+                        <%= link_to user_path(post.user) do %>
+                            <%= image_tag post.user.avatar %>
+                        <% end %>
+                        <% end %>
                     </div>
-                    <div class="username">
-                    <%= post.user.username %>
+                    <%= link_to post.user.username, user_path(post.user), class: 'username' %>
                     </div>
-                </div>
                 <%= image_tag post.image, class: 'main-image' %>
                 <div class="description">
                     <%= post.description %>

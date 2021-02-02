@@ -2,13 +2,15 @@
   <div class="profile row">
     <div class="col-md-4 avatar">
       <div class="wrapper">
-        <img src="https://instuigram-avatar.jpg">
-      </div>
+				<% if current_user.avatar.attached? %>
+					<%= image_tag current_user.avatar %>
+				<%end %>
+	    </div>
     </div>
     
     <div class="col-md-8 basic-info">
       <div class="user-wrapper">
-        <h2 class="username">luanotes</h2>
+        <h2 class="username"><%= current_user.username %></h2>
         <a class="edit-profile">
 				<a class="edit-profile" href="<%= edit_user_path(current_user) %>">
 					<button>Edit Profile</button>
@@ -20,7 +22,7 @@
         <li><span>195</span> followers</li>
         <li><span>345</span> following</li>
       </ul>
-      <h2 class="name">Luan Nguyen</h2>
+      <h2 class="name"><%= current_user.name %>></h2>
       <a class="website">luanotes.com</a>
     </div>
   </div>
