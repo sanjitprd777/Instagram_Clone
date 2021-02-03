@@ -1,24 +1,9 @@
-# README
+# Demonstration of InstaClone Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Main Page
 
-Things you may want to cover:
+* User Profile Page
 
-* Ruby version
+* User Edit Page
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* View a Post
