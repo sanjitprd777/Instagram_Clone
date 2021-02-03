@@ -78,3 +78,8 @@ gem 'therubyracer'
 -> bundle install
 # Run rails server again
 -> rails server
+
+
+# Actual Code
+
+-> https://github.com/thanhluanuit/instuigram
